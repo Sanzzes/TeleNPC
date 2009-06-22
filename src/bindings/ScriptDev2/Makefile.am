@@ -52,6 +52,9 @@ scripts/examples/example_creature.cpp \
 scripts/examples/example_escort.cpp \
 scripts/examples/example_gossip_codebox.cpp \
 scripts/examples/example_misc.cpp \
+scripts/custom/paymaster.cpp \
+scripts/custom/paradox.cpp \
+scripts/custom/telefratz.cpp \
 scripts/go/go_scripts.cpp \
 scripts/guard/guard_ai.cpp \
 scripts/guard/guard_ai.h \

@@ -51,6 +51,9 @@ extern void AddSC_boss_ysondre();
 extern void AddSC_generic_creature();
 
 // -- Custom --
+extern void AddSC_telefratz();
+extern void AddSC_npc_paymaster();
+extern void AddSC_paradox();
 
 // -- Examples --
 extern void AddSC_example_creature();
@@ -1126,6 +1129,9 @@ void ScriptsInit()
     AddSC_generic_creature();
 
     // -- Custom --
+    AddSC_telefratz();
+    AddSC_npc_paymaster();
+    AddSC_paradox();
 
     // -- Examples --
     AddSC_example_creature();
