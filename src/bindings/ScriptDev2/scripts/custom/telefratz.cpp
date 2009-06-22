@@ -214,6 +214,45 @@ player->CLOSE_GOSSIP_MENU();
 player->TeleportTo(615, 3228.0f, 384.0f, 71.0f, 1.0f);
 break;
 
+case 4064:
+
+player->CLOSE_GOSSIP_MENU();
+player->TeleportTo(603, 2001.0f, 78.0f, 430.0f, 2.0f);
+break;
+
+case 4081:
+
+player->CLOSE_GOSSIP_MENU();
+player->TeleportTo(1, 5496.0f, -4581.0f, 831.0f, 3.0f);
+break;
+
+case 4082:
+
+player->CLOSE_GOSSIP_MENU();
+player->TeleportTo(1, 5164.0f, -4677.0f, 830.0f, 5.0f);
+break;
+
+case 4084:
+
+player->CLOSE_GOSSIP_MENU();
+player->TeleportTo(1, 5759.0f, -4494.0f, 762.0f, 3.0f);
+break;
+
+
+case 4083:
+
+if ( player->GetTeam() == ALLIANCE )
+{
+	player->CLOSE_GOSSIP_MENU();
+	player->TeleportTo(1, 5281.0f, -4909.0f, 700.0f, 1.0f);
+}
+else
+{
+	player->CLOSE_GOSSIP_MENU();
+	player->TeleportTo(1, 5269.0f, -4744.0f, 692.0f, 3.0f);
+}
+break;
+
 case 4023:
 player->CLOSE_GOSSIP_MENU();
 player->ModifyMoney(1*costo);
@@ -224,6 +263,7 @@ player->ADD_GOSSIP_ITEM( 5, "Support (Wer Hilfe braucht)"                       
 player->ADD_GOSSIP_ITEM( 5, "Quest Area"                       , GOSSIP_SENDER_MAIN, 4040);
 player->ADD_GOSSIP_ITEM( 5, "Home City (Custom City)"                       , GOSSIP_SENDER_MAIN, 4041);
 player->ADD_GOSSIP_ITEM( 7, "Events"				, GOSSIP_SENDER_MAIN, 4050);
+player->ADD_GOSSIP_ITEM( 7, "-Battlegrounds-"				, GOSSIP_SENDER_MAIN, 4080);
 player->ADD_GOSSIP_ITEM( 7, "-Instanzen-"				, GOSSIP_SENDER_MAIN, 4060);
 player->ADD_GOSSIP_ITEM( 7, "-Hauptmenue-"					 , GOSSIP_SENDER_MAIN, 5552);
 player->ADD_GOSSIP_ITEM( 0, "Aufwiedersehen"			, GOSSIP_SENDER_MAIN, 6660);
@@ -247,8 +287,32 @@ case 4060:
 player->ADD_GOSSIP_ITEM( 5, "Blackwing Lair T7.5"                       , GOSSIP_SENDER_MAIN, 4061);
 player->ADD_GOSSIP_ITEM( 5, "T8 Instance Part 1"                       , GOSSIP_SENDER_MAIN, 4062);
 player->ADD_GOSSIP_ITEM( 5, "T8 Instance Part 2"                       , GOSSIP_SENDER_MAIN, 4063);
+player->ADD_GOSSIP_ITEM( 5, "T8,5 Instance-Ulduar"                       , GOSSIP_SENDER_MAIN, 4064);
 player->ADD_GOSSIP_ITEM( 7, "-Zuruek-"					 , GOSSIP_SENDER_MAIN, 4042);
 player->ADD_GOSSIP_ITEM( 0, "Aufwiedersehen"			, GOSSIP_SENDER_MAIN, 6660);
+
+player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE,_Creature->GetGUID());
+
+break;
+
+case 4080:
+    if ( player->GetTeam() == ALLIANCE ) {
+
+player->ADD_GOSSIP_ITEM( 5, "Allianz Camp"                       , GOSSIP_SENDER_MAIN, 4082);
+player->ADD_GOSSIP_ITEM( 5, "Allianz Cave"                       , GOSSIP_SENDER_MAIN, 4084);
+player->ADD_GOSSIP_ITEM( 5, "Frost Canyon."                       , GOSSIP_SENDER_MAIN, 4083);
+player->ADD_GOSSIP_ITEM( 7, "-Zuruek-"					 , GOSSIP_SENDER_MAIN, 4042);
+player->ADD_GOSSIP_ITEM( 0, "Aufwiedersehen"			, GOSSIP_SENDER_MAIN, 6660);
+
+	}  else {
+
+player->ADD_GOSSIP_ITEM( 5, "Hord Camp"                       , GOSSIP_SENDER_MAIN, 4081);
+player->ADD_GOSSIP_ITEM( 5, "Frost Canyon."                       , GOSSIP_SENDER_MAIN, 4083);
+player->ADD_GOSSIP_ITEM( 7, "-Zuruek-"					 , GOSSIP_SENDER_MAIN, 4042);
+player->ADD_GOSSIP_ITEM( 0, "Aufwiedersehen"			, GOSSIP_SENDER_MAIN, 6660);
+
+
+	}
 
 player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE,_Creature->GetGUID());
 
